@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="my-svg"></div>
-  </body>
-  <style>
-    svg * {
-      fill: none;
-      stroke: currentColor;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="my-svg"></div>
+</body>
+<style>
+  svg * {
+    fill: none;
+    stroke: currentColor;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+<script>
+  const myVivus = new Vivus('my-svg', {
+    type: "oneByOne",
+    duration: 200,
+    file: './my_brain_fixed.svg',
+    onReady: function (myVivus) {
+      myVivus.play()
     }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js" ></script>
-  <script>
-    window.addEventListener('load', (event) => {
-        const myVivus = new Vivus('my-svg', {
-            type: "oneByOne",
-            duration: 200,
-            file: './my_brain_fixed.svg'
-        });
-        myVivus.play()
-    });
-  </script>
+  });
+</script>
+
 </html>
